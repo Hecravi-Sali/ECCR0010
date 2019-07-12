@@ -14,7 +14,12 @@
  * 原理参照JDK源码中Integer类对于Bitcount的实现
  * --- --- ---
  */
-module BitCounter(/*AUTOARG*/);
+module BitCounter(/*AUTOARG*/
+   // Outputs
+   BC_local_result,
+   // Inputs
+   local_BC_bitstream
+   );
    /* ------- ------- -------
     * parameter list
     */
@@ -49,16 +54,18 @@ module BitCounter(/*AUTOARG*/);
     */
    generate
       if(FillCountRange != WID_CountRange) begin : G0
-         assign _temp[0] = {(FillCountRange - WID_CountRange){1'B0}, local_BC_bitstream};
+         assign _temp[0] = {{(FillCountRange - WID_CountRange){1'B0}}, local_BC_bitstream};
       end
       else begin : G1
          assign _temp[0] = local_BC_bitstream;
       end
+   endgenerate
+
    generate
       genvar i, k;
-      for(i = 1; i <= CountRangeLayer + 1; i = i + 1) begin : G2
+      for(i = 1; i < CountRangeLayer + 1; i = i + 1) begin : G2
          for(k = 0; k < 2 ** (CountRangeLayer - i); k = k + 1) begin : G3
-            assign _temp[i][k * (i + 1) +: (i + 1)] = _temp[i - 1][k * 2 * i +: i] + _temp[i - 1][(k + 1) *2 * i -: i];
+            assign _temp[i][k * (i + 1) +: (i + 1)] = _temp[i - 1][k * (2 * i) +: i] + _temp[i - 1][(k + 1) * (2 * i) - 1 -: i];
          end
          //  Connect unused lines to GND
          if(i > 1) begin

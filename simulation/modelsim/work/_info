@@ -1,0 +1,97 @@
+m255
+K3
+13
+cModel Technology
+dF:\Modelsim\examples
+vBitCounter
+Z0 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+!i10b 1
+VM3d6Eg5AC<@fCieS<V48i1
+r1
+!s85 0
+31
+IL6@;R_15DjHXg313d4LVI3
+S1
+Z1 dF:\Projects\ECCR0010\simulation\modelsim
+w1562931200
+8../../src/BC/BitCounter.sv
+F../../src/BC/BitCounter.sv
+L0 17
+Z2 OE;L;10.1a;51
+Z3 !s102 +cover=sbcet
+Z4 o-sv +cover=sbcet -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+n@bit@counter
+!s100 4Lik5S;U8zPM>jHk>[l1G3
+!s105 BitCounter_sv_unit
+!s90 -reportprogress|300|-sv|+cover=sbcet|../../src/BC/BitCounter.sv|
+!s108 1562935588.028000
+!s107 ../../src/BC/BitCounter.sv|
+vBitCounter_test
+Z5 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+V3^cbg><@?Z1Iz9LDQSe:o3
+r1
+31
+IM=5kE[Dk>VJ<UPgOcN3IS1
+S1
+R1
+w1562932191
+8../BC/BitCounter_test.sv
+F../BC/BitCounter_test.sv
+L0 5
+R2
+R3
+R4
+n@bit@counter_test
+!i10b 1
+!s85 0
+!s100 [mTjLNfW7@LB;PZ2fN9Qf0
+!s105 BitCounter_test_sv_unit
+!s90 -reportprogress|300|-sv|+cover=sbcet|../BC/BitCounter_test.sv|
+!s108 1562935587.823000
+!s107 ../BC/BitCounter_test.sv|
+vParallelSequenceDetection
+R5
+VE@`f4BleSoKoAW^7M:T_23
+r1
+31
+ImfIVz[PhH851mmlQCJQ9A1
+S1
+R1
+w1562934033
+8../../src/PSD/ParallelSequenceDetection.sv
+F../../src/PSD/ParallelSequenceDetection.sv
+L0 7
+R2
+R3
+R4
+n@parallel@sequence@detection
+!s100 eIE5<g:ah=IUZF;bEZV^g0
+!s105 ParallelSequenceDetection_sv_unit
+!s108 1562934035.454000
+!s107 ../../src/PSD/ParallelSequenceDetection.sv|
+!s90 -reportprogress|300|-sv|+cover=sbcet|../../src/PSD/ParallelSequenceDetection.sv|
+!i10b 1
+!s85 0
+vParallelSequenceDetection_test
+R5
+V:LBjN0EB^e3jk;ViNbIAP0
+r1
+31
+IXaB`Fh8D[L0OSVNDkYW5`1
+S1
+R1
+w1562933903
+8../PSD/ParallelSequenceDetection_test.sv
+F../PSD/ParallelSequenceDetection_test.sv
+L0 5
+R2
+R3
+R4
+n@parallel@sequence@detection_test
+!s100 N_1EHYd1GoioSoH6bGQzP2
+!s105 ParallelSequenceDetection_test_sv_unit
+!s90 -reportprogress|300|-sv|+cover=sbcet|../PSD/ParallelSequenceDetection_test.sv|
+!s108 1562934035.277000
+!s107 ../PSD/ParallelSequenceDetection_test.sv|
+!i10b 1
+!s85 0

@@ -4,7 +4,13 @@
  * Features    :
  * Precautions :
  */
-module ParallelSequenceDetection(/*AUTOARG*/);
+module ParallelSequenceDetection(/*AUTOARG*/
+   // Outputs
+   PSD_local_busy, PSD_local_position,
+   // Inputs
+   local_PSD_clk, local_PSD_reset, local_PSD_newstream, local_PSD_compair,
+   local_PSD_bitstream
+   );
    /* ------- ------- -------
     * parameter list
     */
@@ -40,14 +46,14 @@ module ParallelSequenceDetection(/*AUTOARG*/);
    /* ------- ------- -------
     * netlist
     */
-   local [1 : 0] _status;
-   local [WID_Compair - 1 : 0] _compairstr;
-   local [WID_Buffer - 1 : 0] _matchbuffer;
-   local [$clog2(NUM_Buffer) - 1 : 0] _fillcount;
-   local [WID_Bitstream - 1 : 0] PSD_local_position;
+   logic [1 : 0] _status;
+   logic [WID_Compair - 1 : 0] _compairstr;
+   logic [WID_Buffer - 1 : 0]  _matchbuffer;
+   logic [$clog2(NUM_Buffer) - 1 : 0] _fillcount;
+   logic [WID_Bitstream - 1 : 0]      PSD_local_position;
 
-   local [WID_Compair - 1 : 0] _compair_temp [WID_Buffer - 1 : 0];
-   local [WID_Bitstream - 1 : 0] _compair_ans;
+   logic [WID_Compair - 1 : 0]        _compair_temp [WID_Buffer - 1 : 0];
+   logic [WID_Bitstream - 1 : 0]      _compair_ans;
 
    /* ------- ------- -------
     * assign list
@@ -95,7 +101,7 @@ module ParallelSequenceDetection(/*AUTOARG*/);
 
            STS_Filling : begin
               _fillcount <= _fillcount - 1;
-              if(_fillcount == {($clog2(NUM_Buffer) - 1){1'B0}, 1'B1}) begin
+              if(_fillcount == {{($clog2(NUM_Buffer) - 1){1'B0}}, 1'B1}) begin
                  _status <= STS_Matching;
               end
            end
