@@ -70,8 +70,9 @@ module BitCounter_test();
    ScoreBoard_a : assert property (@(posedge clk) (Check(local_BC_bitstream)));
 
    covergroup cg @(posedge clk);
+      option.per_instance = 1;
       coverpoint local_BC_bitstream {
-         option.auto_bin_max = 4096;
+         option.auto_bin_max = 2 ** 16;
       }
    endgroup
 
