@@ -1,14 +1,14 @@
 /* ------- ------- -------
- * Belons      :
- * Connection  : None
- * Features    : Notestd
- * manual      :
+ * Belons     :
+ * Connection : None
+ * Features   : Stable
+ * manual     :
  * --- --- ---
- * BitCounter用来统计固定长度输入bitstream中1出现的次数。
+ * 用来统计固定长度输入bitstream中1出现的次数。
  *
- * @WID_CountRange : 输入bitstream的宽度
+ * #WID_CountRange : 输入bitstream的宽度
  * limit WID_CountRange > 1
- * @WID_CountResult : 输出bitstream中1的次数
+ * #WID_CountResult : 输出bitstream中1的次数
  * limit WID_CountResult = $clog2(WID_CountRange)
  *
  * 原理参照JDK源码中Integer类对于Bitcount的实现

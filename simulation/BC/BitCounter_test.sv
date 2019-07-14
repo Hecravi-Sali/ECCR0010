@@ -32,7 +32,7 @@ module BitCounter_test();
    //==== Stimulus ====//
    logic clk;
    logic [WID_CountResult - 1 : 0] resultdelay;
-   integer _randseed;
+   integer _randseed = 100;
 
    always @(posedge clk) begin
       if($get_coverage() == 100) begin
