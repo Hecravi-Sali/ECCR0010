@@ -1,5 +1,3 @@
-quit -sim
-
 vlog -sv +cover=sbcet "../PSD/ParallelSequenceDetection_test.sv"
 vlog -sv +cover=sbcet "../../src/PSD/ParallelSequenceDetection.sv"
 vlog -sv +cover=sbcet "../../src/BC/BitCounter.sv"

@@ -1,5 +1,3 @@
-quit -sim
-
 vlog -sv +cover=sbcet "../BC/BitCounter_test.sv"
 vlog -sv +cover=sbcet "../../src/BC/BitCounter.sv"
 
